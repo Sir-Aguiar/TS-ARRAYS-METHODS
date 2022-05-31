@@ -4,13 +4,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const arrays_json_1 = __importDefault(require("../arrays.json"));
-const marketFruits = arrays_json_1.default["market-fruits"];
-// Increasing +1 the fruit price
-/*
-  The third parameter is the current array element
-*/
-const expensiveFruits = marketFruits.map((fruit) => {
-    fruit.price += 1;
-    return fruit;
-});
-console.log(expensiveFruits);
+const makertFruits = arrays_json_1.default["market-fruits"];
+function onlyCheapFruits(fruit) {
+    if (fruit.price < 4)
+        return true;
+    return false;
+}
+const cheapFruits = makertFruits.filter(onlyCheapFruits);
+console.log(cheapFruits);
